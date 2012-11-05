@@ -13,9 +13,14 @@ Fork of https://github.com/xenith/django-base-template with some things added/re
 - $ pip install -r requirements/dev.txt
 - $ cp projectname/settings/local-dist.py projectname/settings/local.py (local.py shouldn't be added
   to your source control)
-  $ setup mysql settings in local.py
+- setup mysql settings in local.py and other settings
 - $ ./manage.py syncdb
 - $ ./manage.py runserver
+
+Adding an app
+- $ ./manage.py startapp app_name
+- add app_name to projectname/settings/base.py
+- $ mkdir app_name/templates
 
 {% endif %}
 # {{ project_name|title }} Project #
