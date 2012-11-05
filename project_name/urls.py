@@ -11,17 +11,15 @@ import session_csrf
 session_csrf.monkeypatch()
 
 
-def bad(request):
-    """ Simulates a server error """
-    1 / 0
-
 urlpatterns = patterns('',
+    url(r'^$', '{{ project_name }}.views.home', name='home'),
+    #(r'^{{ app_name }}/', include({{ app_name }}.urls)),
+
     (r'', include('{{ project_name }}.base.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/$', anonymous_csrf(admin.site.admin_view(admin.site.index))),
     (r'^admin/', include(admin.site.urls)),
     #url(r'^', include('debug_toolbar_user_panel.urls')),
-    (r'^bad/$', bad),
 )
 
 ## In DEBUG mode, serve media files through Django.
