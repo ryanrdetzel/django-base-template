@@ -18,9 +18,8 @@ Fork of https://github.com/xenith/django-base-template with some things added/re
 - $ ./manage.py runserver
 
 Adding an app
-- $ ./manage.py startapp app_name
+- $ ./manage.py startapp --template=conf/app_name app_name 
 - add app_name to projectname/settings/base.py
-- $ mkdir app_name/templates
 
 {% endif %}
 # {{ project_name|title }} Project #

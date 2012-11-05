@@ -46,8 +46,7 @@ INSTALLED_APPS = [
 
     # Application base, containing global templates.
     '{{ project_name }}',
-
-    # Local apps, referenced via {{ project_name }}.appname
+    # app_name,
 ]
 
 # Place bcrypt first in the list, so it will be the default password hashing
