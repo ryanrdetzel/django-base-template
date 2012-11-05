@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.defaults import include, patterns
 from session_csrf import anonymous_csrf
 from django.contrib import admin
+from django.conf.urls.defaults import url, patterns
 admin.autodiscover()
 
 # django-session-csrf monkeypatcher
@@ -15,7 +16,6 @@ urlpatterns = patterns('',
     url(r'^$', '{{ project_name }}.views.home', name='home'),
     #(r'^{{ app_name }}/', include({{ app_name }}.urls)),
 
-    (r'', include('{{ project_name }}.base.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/$', anonymous_csrf(admin.site.admin_view(admin.site.index))),
     (r'^admin/', include(admin.site.urls)),

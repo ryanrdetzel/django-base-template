@@ -14,8 +14,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'USER': '',
         'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'NAME': '',
         'OPTIONS': {
             'init_command': 'SET storage_engine=InnoDB',
             'charset' : 'utf8',
