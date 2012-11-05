@@ -37,9 +37,6 @@ SITE_ID = 1
 ROOT_URLCONF = '{{ project_name }}.urls'
 
 INSTALLED_APPS = [
-    # Template apps
-    'jingo_minify',
-
     # Django contrib apps
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,10 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third-party apps, patches, fixes
-    'commonware.response.cookies',
     'djcelery',
     'django_nose',
-    'session_csrf',
     'debug_toolbar',
     #'debug_toolbar_user_panel',
     #'memcache_toolbar',
@@ -156,20 +151,14 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     'django.core.context_processors.static',
     'session_csrf.context_processor',
     'django.contrib.messages.context_processors.messages',
-    #'jingo_minify.helpers.build_ids',
 ]
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or
-    # "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_ROOT, 'templates'),
 )
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'jingo.Loader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
@@ -211,16 +200,6 @@ DEBUG_TOOLBAR_PANELS = (
 #AUTH_PROFILE_MODULE = '{{ project_name }}.accounts.UserProfile'
 
 FILE_UPLOAD_PERMISSIONS = 0664
-
-# Because Jinja2 is the default template loader, add any non-Jinja templated
-# apps here:
-JINGO_EXCLUDE_APPS = [
-    'admin',
-    'registration',
-    'debug_toolbar',
-    'debug_toolbar_user_panel',
-    'memcache_toolbar',
-]
 
 # The WSGI Application to use for runserver
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
