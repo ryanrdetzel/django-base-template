@@ -1,9 +1,3 @@
-# Choose your databases adapter
-#psycopg2
-#MySQL-python
-
-# Use Jinja2 for templates instead of django's templating system
-Jinja2
-
+MySQL-python
 # for bcrypt passwords
 py-bcrypt
