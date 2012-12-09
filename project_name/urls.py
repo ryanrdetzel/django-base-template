@@ -7,6 +7,9 @@ from django.contrib import admin
 from django.conf.urls.defaults import url, patterns
 admin.autodiscover()
 
+import session_csrf
+session_csrf.monkeypatch()
+
 
 urlpatterns = patterns('',
     url(r'^$', '{{ project_name }}.views.home', name='home'),
